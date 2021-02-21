@@ -1,0 +1,49 @@
+1c. The game does play the way that I expected. If I play with the computer starting with an empty board, I cannot beat it. Every game ends in a tie.
+Recorded states (Evaluated, Expanded):
+(63905, 34313)
+(1285,693)
+(47,26)
+(5,3)
+
+(55505,29633)
+(933,492)
+(51,30)
+(5,3)
+
+This is what I expected because as blanks become lesser on the board, there are fewer moves to be made.
+
+1e.The game still worked well and I still can't beat it, it either ends in a tie or the computer winning (unless I made the first couple moves for him and make him lose on purpose :D).
+Recorded states (Evaluated, Expanded):
+(21193,12481)
+(178,105)
+(36,21)
+(5,3)
+
+(25442,14954)
+(663,384)
+(61,37)
+(5,3)
+
+
+The state numbers start out smaller, and throughout the game, the number of states reduces even more rapidly than the minimax. This is what I expected because the pruning function should be faster than the minimax.
+
+1f.
+Minimax:(549946,294778)
+Pruning:(230650,134903)
+
+The pruning algorithm has fewer expanded states than the minimax. The result is what I expected. Since pruning doesn't calculate the paths that are not optimal,  fewer paths are expanded using pruning.
+
+States after changing the ordering:
+Minimax:(549946,294778)
+Pruning:(91338,53627)
+
+For minimax, it runs through all the possible states that can be expanded, so the numbers are the same. For pruning, this algorithm cuts out moves that aren't needed because there are better moves that exist. Thus pruning can save a lot more time than minimax since it's optimized. This ordering is better because the priority of the best spot to make the move (middle of the board) is higher than the previous ordering.
+
+Extra Credit:
+Better ordering: [4,0,8,2,3,5,6,1,7]
+This expands 44016 states because the moves that the cpu would want to make first is to go more towards the middle first and then go to diagonals. These are the best places to go first, so fewer states will be expanded for the game.
+
+Worst ordering: [1,3,5,7,0,2,6,8,4]
+This expands 134903 states. This works because the order that the cpu moves is that for the first 4 moves doesn't allow the cpu to come to a win because not three spots are connected. This causes more states to be expanded out because the cpu is very far from the winning state.
+
+
