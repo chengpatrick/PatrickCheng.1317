@@ -1,0 +1,18 @@
+Author: Patrick Cheng (cheng.1317)
+CSE 3461 Lab1 Socket Programming
+Compiler Version: javac 1.8.0_272
+To run program,
+For TCP:
+enter: javac tcp_socket.java
+then enter: java tcp_socket
+For UDP:
+enter: javac udp_socket.java
+then enter: java udp_socket
+The uuid should be stored in the uuid file
+For external resources, I used Geeksforgeeks
+Socket Programming in Java
+https://www.geeksforgeeks.org/socket-programming-in-java/
+&
+Working with UDP DatagramSockets in Java
+https://www.geeksforgeeks.org/working-udp-datagramsockets-java/
+to help me understand how to deal with TCP and UDP in java
