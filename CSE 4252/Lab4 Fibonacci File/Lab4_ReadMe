@@ -1,0 +1,126 @@
+Author comment:
+The programs works fine.
+Due to the lack of time on this project, many parts were hard coded and the main was messy.
+Methods could been developed and the main could be simplified better.
+
+
+----------------------------------------------------------------------------
+
+Project Name: Fibonacci Files
+
+Description
+
+Step 1.
+
+Your C++ program (at the beginning of your program state the compilation command) prompts for a positive integer with up to 4 digits, call it N, and the program should terminate with an appropriate message if the input provides anything but up to 4 digits. Then the program prompts for a file name with up to 10 characters (only any combination of digits and letters), call it FILE and it should terminate with an appropriate message if the input provides anything but up to 10 required characters.
+
+Then, the program generates sequence of N Fibonacci numbers.  Fibonacci numbers Fn are defined as follows:
+
+                         F0 = 1, F1 = 1 and Fi+2 = Fi + Fi+1     i=0, 1, 2, …
+
+In other words, each number is the sum of the previous two numbers. To store Fibonacci numbers, use variables of type: unsigned long int, which include 64 bits (8 bytes) and can accommodate up to the certain 19-digit decimal integers.
+
+As each Fibonacci number is generated, it is immediately written into FILE and displayed on the screen; write and display 4 numbers per row. At the end of this step, display the number of generated Fibonacci numbers.
+
+Note: Each time new Fibonacci number is generated check if an overflow happens, i.e. if the new Fibonacci number could not be stored in the declared integer variable. Here is the check if adding two unsigned integers results in an overflow:
+
+unsigned long int x, y, z;
+
+x=y+z;
+
+if(x<y) cout<<”overflow”;
+
+If an overflow happens, your program should stop producing additional Fibonacci numbers and continue with step 2.
+
+ 
+
+Step 2.
+
+Compute the median of numbers in FILE. The median is the number that has the same number of data elements greater than the number as there are less than the number. Since numbers in the file are sorted, the median is the middle element in the file, if there are an odd number of elements, or average of the two middle elements, if the file has an even number of elements. In this step, use the count of Fibonacci numbers generated in Step 1.
+
+ 
+
+Step 3.
+
+Copy even numbers from FILE into new file FILE.even and odd numbers into new file FILE.odd. Write 4 numbers in each row. Display the count of numbers in each file.
+
+Then, compute the median in both files and display each. In this step, do not use the count of numbers in FILE from Step 1.
+
+ 
+
+Step 4.
+
+Copy the entire FILE.even at the end of FILE.odd writing 6 numbers per row and then display the number of elements in FILE.odd. In this step, do not use the count of numbers in FILE.even from Step 3.
+
+ 
+
+Step 5.
+
+Display contents of FILE.odd.
+
+------------------------------------------------------------
+
+[babic.1@cse-fl1 Lab4]$ lab4
+
+Enter positive integer N (up to 4 digits): 30
+
+N = 30
+
+Enter file name (up to 10 digits or/and letters ONLY): qwerty
+
+File name = qwerty
+
+File qwerty contents:
+                                 1                     1                     2                     3
+
+                                 5                     8                    13                  21
+
+                               34                   55                    89                144
+
+                             233                 377                  610                987
+
+                           1597               2584                4181              6765
+
+                         10946              17711             28657            46368
+
+                         75025            121393           196418          317811
+
+                       514229            832040
+
+   Total numbers in qwerty file = 30
+
+ 
+
+The median number in qwerty file is: 798.5
+ 
+
+Total numbers in qwerty.even file = 10
+   Total numbers in qwerty.odd file = 20
+
+   The median number in qwerty.even file is: 1597.0
+
+   The median number in qwerty.odd file is: 682.0
+
+ 
+
+The total count in qwerty.odd is now: 30
+ 
+
+File qwerty.odd content:
+                                  1                     1                     3                     5
+
+                                13                   21                   55                   89
+
+                              233                 377                 987               1597
+
+                            4181               6765             17711             28657
+
+                          75025           121393           317811           514229
+
+ 
+
+                                  2                     8                   34                 144               610       2584 
+
+                          10946             46368           196418           832040
+
+[babic.1@cse-fl1 Lab4]$
