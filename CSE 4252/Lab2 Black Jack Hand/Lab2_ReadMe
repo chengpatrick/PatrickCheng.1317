@@ -1,0 +1,133 @@
+Project name:  Blackjack Scores
+
+Description:     
+
+Write program that scores a blackjack hand. In blackjack, a player receives from two to five cards. The cards 2 through 10 are scored as 2 through 10 points each, respectively. The face cards – jack, queen and king – are scored as 10. The goal is to come as close to a score of 21 as possible without going over 21. Hence any score over 21 is called “busted”, while score of 21 is called “blackjack” The ace can be counted, as 1 or 11, whichever is better for the player. For example, an ace and a 10 can be scored as either 11 or 21, but since 21 is a better score, this hand is scored as 21. An ace and two 8s can be scored as either 17 or 27, but since 27 is a “busted” score, this hand is scored as 17.
+
+The player is first asked how many cards she/he has, and the player is supposed to respond with one of ‘2’, ‘3’, ‘4’ or ‘5’. Of course, the player does not type in the single quotes. The input should be checked for validity. On error, your program should respond with error message and at this point the player should be able to exit the program or start from the beginning. For this input, you should ignore all whitespace characters as well as all characters after first non-whitespace character is provided.  
+
+The player is then asked for all card faces. Input values 2 through 9 should be given as the characters ‘2’ through ‘9’, and input values for ten, jack, queen, king, and ace as the characters ‘t’, ‘j’, ‘q’, ‘k’, and ‘a’, respectively. Of course, the player does not type in the single quotes. You should allow upper as well as lowercase letters as input.  If anything else is given, after error message, the player should have option of exiting program or starting from the beginning. Note, it is not possible to have five cards all having the same face. For this input, you should ignore all whitespace characters as well as all characters after required number of characters are provided.  
+
+After reading in the card values, your program should convert them from character values to numeric card scores, then calculates a value of the hand, prints a score plus the word “Busted” if the score is above 21 or the ward “Blackjack” if the score is 21.
+
+As it has been stated, your program should include a loop that lets the player start new calculation until she/he quits.
+
+As a comment, at the beginning of the code, include your compilation command.
+
+You are not allowed to use arrays, strings or global variables. You are encouraged to use functions.
+
+Output of your program should look similarly to this:
+
+ 
+
+fl1|~/Cse4252/Lab2> jack
+
+Enter a number of cards (2-5):   3 xyz
+
+Number of cards entered = 3
+
+Enter the faces of the cards, 2-9, t, j, q, k, a:      tj  4 zzz
+
+Faces of cards entered = t j 4
+
+The value of your hand = 24  --> Busted
+
+Type Q or q to quit, or any other character to try again:  x 4
+
+You typed: x
+
+ 
+
+Enter a number of cards (2-5): x4
+
+Number of cards entered = x
+
+That is illegal. You may try again
+
+Type Q or q to quit, or any other character to try again: x
+
+You typed: x
+
+ 
+
+Enter a number of cards (2-5):    5 cccc
+
+Number of cards entered = 5
+
+Enter the faces of the cards, 2-9, t, j, q, k, a:    2 3 4 t 2    3r
+
+Faces of cards entered = 2 3 4 t 2
+
+The value of your hand = 21  --> Blackjack
+
+Type Q or q to quit, or any other character to try again: x
+
+You typed: x
+
+ 
+
+Enter a number of cards (2-5):    3
+
+Number of cards entered = 3
+
+Enter the faces of the cards, 2-9, t, j, q, k, a:    j a x eiei
+
+Faces of cards entered = j a x
+
+x is not a card face! You may try again
+
+Type Q or q to quit, or any other character to try again: y
+
+You typed: y
+
+ 
+
+Enter a number of cards (2-5):      4 four
+
+Number of cards entered = 4
+
+Enter the faces of the cards, 2-9, t, j, q, k, a: aAaa
+
+Faces of cards entered = a A a a
+
+The value of your hand = 14
+
+Type Q or q to quit, or any other character to try again: q
+
+You typed: q
+
+fl1|~/Cse4252/Lab2>
+
+-------------------------------------------------------------------------------------------
+
+My C++ program for Lab1 has 165 lines (including comment and blank lines).
+
+Hint: I am providing several lines from the beginning of my program that may help you in the design of your code. You absolutely do NOT have to follow my ideas.
+
+#include <iostream>
+
+using namespace std;
+
+int setHandValue(char card1, char card2, char card3, char card4, char card5);
+
+// Input: card faces; if less than 5 cards, additional ones are set to 0
+
+// Returns a value of the hand or 0 if illegal card given or 5 identical cards
+
+// Calls setValueCard()
+
+int setValueCard(char card);
+
+// Returns a numerical value of the card or 0 if an illegal card
+
+void reportValue(int handValue);
+
+// Displays score handValue, including comments Blackjack & Busted
+
+int main()
+
+{ // Includes a loop that lets the player starts new calculation or quits
+
+   //Gets a number of cards and checks its validity
+
+   // Gets required number of cards and calls setHandValue() …. }
