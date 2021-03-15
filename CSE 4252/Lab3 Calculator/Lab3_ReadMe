@@ -1,0 +1,141 @@
+Project Name: Calculator
+
+Adding and subtracting numbers with an arbitrary large number of decimal digits.
+
+Motivation
+
+C++ variables of type int (size 32 bits) can have integer values in this range: [ ̶ 2,147,483,648; +2,147,483,647], while C++ variables of type long (size 64 bits) can have integer values in this range: [ ̶ 9,223,372,036,854,775,808; +9,223,372,036,854,775,807]
+
+Using variables of int or long type in C++ programming language, we are limited with size of operands as given above for operations add (+) and subtract (̶ ). For example, we could not perform add/subtract in C++ if any of integer operands has 20 or more decimal digits.
+
+Description
+
+Your program adds and subtracts two positive integers that consist of up to L-digits, where L is an arbitrary large number. You should be able to change the maximum length of integers by changing only one globally defined constant variable and recompiling your program.
+
+The program first reads the digits of both integer operands as values of type char, e.g. the operand 23456 is read as the five characters ‘2’, ’3’, ’4’, ’5’, and ’6’. The digits of each operand are read into an (partially filled) array of characters. For example, the integer 23456 could be stored in the array A by setting A[0] to '2', A[1] to '3', A[2] to '4', A[3] to '5', and A[4] to '6'.
+
+Legal characters on input are only digit characters and ‘\n’, while any other character is illegal, including sign ‘+’ or ‘–‘ and any other white-space character. Also leading ‘0’ are illegal. If more than L characters are provided, that is illegal too, do not load all of them into the char array; remember there is no index checking in C++ and characters beyond allocated room for an array will be overwriting something in the memory.
+
+Once operands are legal, your program then performs the addition and subtraction by implementing the usual paper-and-pencil addition/subtraction algorithm. The result is stored in an array of size L+1 (since adding two L-digit numbers may give (L+1)-digit sum), and the result is then displayed on the screen including signs + or  –. Provide a loop that allows the user to continue to do more adds/subtracts.
+
+Include your compilation command as a comment at the beginning of your program.
+
+Hint: In my code, I use char arrays of size (L+1) to store operands. After numbers are read from a keyboard (using cin.get), the characters are changed to values of type int. Also, I found useful to reverse the order of elements in the array, that is, place 6 in A[0], 5 in A[1], 4 in A[2], 3 in A[3], and 2 in A[4]. You are not required to follow my ideas.
+
+----------------------
+
+Here is output of my program:
+
+[babic.1@cse-fl1 Lab3]$ lab3
+
+Enter A integer (up to 10 digits): 123456
+
+A=123456
+
+Enter B integer (up to 10 digits): 01234
+
+B=01234
+
+Illegal characters(s)
+
+Q or q to exit:          
+
+ 
+
+Enter A integer (up to 10 digits): 1234567890
+
+A=1234567890
+
+Enter B integer (up to 10 digits): 2222222222
+
+B=2222222222
+
+A+B = +3456790112
+
+A-B = -987654332
+
+Q or q to exit:
+
+ 
+
+Enter A integer (up to 10 digits):     123
+
+A=    123
+
+Illegal character(s)
+
+Q or q to exit:
+
+ 
+
+Enter A integer (up to 10 digits): 12345q78901234
+
+A=12345q78901
+
+Too many characters
+
+Q or q to exit:
+
+ 
+
+Enter A integer (up to 10 digits): 10       
+
+A=10
+
+Enter B integer (up to 10 digits): 9999999999
+
+B=9999999999
+
+A+B = +10000000009
+
+A-B = -9999999989
+
+Q or q to exit:
+
+ 
+
+Enter A integer (up to 10 digits): 123
+
+A=123
+
+Enter B integer (up to 10 digits): 12s777
+
+B=12s777
+
+Illegal characters(s)
+
+Q or q to exit:
+
+ 
+
+Enter A integer (up to 10 digits): 10       
+
+A=10
+
+Enter B integer (up to 10 digits): 9999999999
+
+B=9999999999
+
+A+B = +10000000009
+
+A-B = -9999999989
+
+Q or q to exit:
+
+ 
+
+Enter A integer (up to 10 digits): 9999999999
+
+A=9999999999
+
+Enter B integer (up to 10 digits): 9999999999
+
+B=9999999999
+
+A+B = +19999999998
+
+A-B = 0
+
+Q or q to exit: q
+
+[babic.1@cse-fl1 Lab3]$
