@@ -1,0 +1,21 @@
+Project: Powers of numbers
+
+C++ doesn't provide the operation powers of number, although the standard C++ library has the function pow(). Powers of numbers can be calculated by multiplying the base by itself for as many times as the value of the exponent. For example, 2.1 raised to the power 4 can be calculated by multiplying 2.1 by itself 4 times to get 19.4481.
+
+The steps your C++ program should perform are as follows:
+
+1. the program requires the base (as double) and the exponent (as int).
+
+2. the program displays received values and the user is asked if they are correct.
+
+3. if the answer is ‘n’, i.e., incorrect numbers are received, the user should be able to provide correct values, i.e., steps 1. & 2. can be repeated. You may need to use a do-while loop to repeat those steps.
+
+4. when the user is satisfied with displayed numbers and the answer is ‘y’, the program multiplies the base by itself using a loop that repeats for the number of times in the exponent. Also, the program deals with the case when the exponent is negative. And the program considers the special cases when exponent is 0 and when base and exponent are 0.
+
+5. Before the result is displayed, the user is asked how many digits after the decimal point should be used.
+
+6. Once the result is displayed, the user should have ability to require displaying the result with a different number of digits after the decimal point until he/she is satisfied, i.e., steps 5 & 6 might be repeated, before the program end.
+
+Hint: In steps 2 & 3, you probably should be using the function cin.clear(); That function resets any error flags which may have been set for the cin stream (for example if the user types a non-numeric character when a number is expected, the fail flag is set).
+
+Presentation A power point slides provide everything you should be using in this C++ program. Do not use any kind of arrays.
