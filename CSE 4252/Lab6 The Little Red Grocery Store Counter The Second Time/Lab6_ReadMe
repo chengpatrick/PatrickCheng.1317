@@ -1,0 +1,130 @@
+Project Name: The Little Red Grocery Store Counter: The Second Time
+
+In this assignment, we are expanding on Lab#5 assignment. Use class Counter to simulate the little red grocery counter. Counter keeps a value for the count in 4 int variables (one integer for each digit) as private variables and the same applies for the overflow value, as in Lab#5. The main addition to Lab#5 is that Counter now has 2 modes: addition and subtraction, i.e. this class can now do subtraction besides addition.
+
+The class Counter includes the following public functions:
+
+The default constructor; it sets the count value to 00.00 and the overflow value to 99.99, as in lab#5, plus sets the class mode to addition. This is the only constructor in the class.
+The functionality of the non-default constructor in Lab#5 is replaced by the overloaded operator >>, i.e. the overflow value can be set to any value <=99.99.
+A public (mutator) member function void reset(); it resets the count to 0, as in Lab#5, plus sets the class mode to addition.
+A public (accessor) member function void displaymax(); it displays the overflow value. As in Lab#5.
+A public (accessor) member function bool overflow(); it detects overflow, i.e. the count has been over the overflow value. As in Lab#5.
+A public (accessor) member function bool maxoverflow(); it detects the count over the maximum value 99.99. As in Lab#5.
+A public (accessor) member function bool underZero(); it detects the count value below zero.
+A public (mutator) member function void add();l it sets Counter mode to addition.
+A public (mutator) member function void sub(); it sets Counter mode to subtraction.
+The overloaded operator << displays all digits of the count, the rightmost two are cents and tens of cents, the next two are dollars and tens of dollars in the format $xx.xx. This replaces 4 public member functions to display each digit of the count in Lab#5. In addition Counter mode is displayed, as ‘+’ for addition or ‘-‘ for subtraction.
+A set of overloaded operators that replaces a set of public functions in Lab#5 that increment digits 1 through 4 by 1, but these overloaded operators can increment and decrement digits by 1 (depending on Counter mode), and each function accounts for carries/borrows as necessary:
+       ─ ─ unary operator; it replaces void incr1() and increments/decrements 1 cent digit
+
+       ─ unary operator; it replaces void incr10() and increments/decrements 10 cent digit
+
+       + unary operator; it replaces void incr100() and increments/decrements $1 digit
+
+       ++ unary operator; it replaces void incr1000() and increments/decrements $10 digit
+
+In all function declarations include const parameter modifiers wherever possible.
+No other public member functions allowed.
+In the main function of your program, first obtain info about the overflow value: if it is the default value set to 9999, or else obtain legal 4-digit number.
+
+Then, provide keys for incrementing cents, dimes, dollars and tens of dollars and some additional tasks. Use the following:
+
+//Start of the code fragment
+
+cout << “\033[2J\033[1;1H”;    //This is a string of special characters that clears a display
+
+// display the count value in the format $xx.xx and the mode add as ‘+’ or subtract as ‘-‘
+
+     cout << "Enter a character and follow, if needed, by a digit 1-9:\n"
+
+             << "Enter + if you want to add\n"
+
+             << "          - if you want to subtract\n"
+
+             << "          a for units\n"
+
+             << "          s for tens\n"
+
+             << "          d for hundreds\n"
+
+             << "          f for thousands\n"
+
+             << "          r to reset counter\n"
+
+             << "          o to inquire about overflow\n"
+
+             << "          m to inquire about capacity overflow\n" 
+
+             <<"           n  to inquire about under overflow\n"
+
+             << "          Q or q at any time to quit.\n"
+
+             << "Follow by pressing the return key in each case:";    
+
+       cin >> ch1;
+
+// read the second character if needed
+
+// End of the code fragment
+
+All inputs should be checked for validity and if input is not valid all characters in the given line are discarded and correct input is requested.
+
+Based on the Counter mode, adding to or subtracting from the count is automatic.
+
+Counter mode can be set to addition with the + key.
+
+Counter mode can be set to subtraction with the – key.
+
+Count can be reset with the r key.
+
+Overflow test can be requested with the o key. Response could be as following:
+
+Overflow test requested
+
+OVERFLOW HAS OCURRED. COUNT > $xx.xx
+
+or
+
+OVERFLOW HASN’T OCCURRED. COUNT < = $xx.xx
+
+Capacity overflow test can be requested with m key. Response could be as following:
+
+Capacity overflow test requested
+
+CAPACITY OVERFLOW HAS OCURRED. COUNT > $99.99
+
+or
+
+CAPACITY OVERFLOW HASN’T OCCURRED. COUNT < = $99.99
+
+Underflow test can be requested with n key. Response could be as following:
+
+Capacity overflow test requested
+
+UNDERFLOW HAS OCURRED, I.E.  COUNT < $00.00
+
+or
+
+UNDERFLOW HASN’T OCCURRED, I.E. COUNT >= $00.00
+
+Use q or Q key to quit.
+
+If the overflow (the count over the set overflow value) has occurred, it is reported (after clearing the display in the given fragment code above) after each operation with the following warning:
+
+ALERT: COUNT IS OVER THE MAXIMUM SET TO $xx.xx
+
+If the capacity overflow (the count over 99.99) has once occurred, it is reported (after clearing the display in the given fragment code above) after each operation until the reset with the following warning:
+
+ALERT: OVERFLOW OVER $99.99 HAS OCCURRED
+
+               RESULTS ARE NOT RELIABLE. RESET IF YOU WANT TO CONTINUE
+
+If the zero under flow (the count < 0) has once occurred, it is reported (after clearing the display in the given fragment code above) after each operation until the reset with the following warning:
+
+ALERT: UNDERFLOW UNDER $00.00 HAS OCCURRED
+
+               RESULTS ARE NOT RELIABLE. RESET IF YOU WANT TO CONTINUE
+
+After displaying any error or information message and before starting the given fragment code above, call function void pause(), as in Lab#5.
+
+You are required to organize your program in 3 files according to the rules for separate compilation. Provide the compilation command at the beginning of each file.
