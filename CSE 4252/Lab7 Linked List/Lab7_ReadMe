@@ -1,0 +1,50 @@
+Project Name: Linked List
+
+Step 1.
+
+First, your program should create a linked list using the following class:
+
+class node
+
+   {  
+
+      public:
+
+       // here include declarations of constructors
+
+       // here include declarations of accessor and mutator functions
+
+       private:
+
+       // here include declaration of private functions, if you need.
+
+         char last[30];
+
+         char first [20];
+
+         unsigned int id;
+
+         node *link;
+
+ };
+
+Input data for values of last, first and id members of each node in the linked list is provided in the file “Data.7”, that can be downloaded from Carmen Files. The file has the following content:
+
+last1,first1   id1  last2,first2   id2    last3,first3    id3  … lasti,firsti  idi …. LastN,firstN  idN
+
+where i = 1, 2,3, … N, and N is unknown. Assume that:
+
+the length of any string lasti is less than 30,
+the length of any string firsti is less than 20,
+strings in 1. and 2. above contains only non-whitespace characters,
+any string idi contains only digits, and its value is an integer that can be stored in as an unsigned int,
+before and after any last,firsti string and any integeri string there is at least one whitespace character.
+Your program should read data from the file (until its end) and as it reads it should create nodes and fill in values for last, first and id members. From each string lasti,firsti you should obtain values for last and first member, and idi provides value for id member. Nodes should be linked in ascending order based on a value of id member. If duplicated id is detected, discard the new entry, and display appropriate message.
+
+ At the end of this step your program should display the number of nodes in the list.
+
+Step 2.
+
+Once the link list is created your program should be able to display content of all nodes in the list, add a new node to the list, remove a node from the list and delete the whole list. A content of file “Lab7.Testing” (given in Carmen Files) shows how the output of your program might look like.
+
+You are required to organize your program in 3 files according to the rules for separate compilation. Provide the compilation command at the beginning of each file.
