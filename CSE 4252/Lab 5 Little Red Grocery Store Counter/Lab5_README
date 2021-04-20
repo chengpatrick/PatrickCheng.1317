@@ -1,0 +1,143 @@
+Project Name: Little Red Grocery Store Counter
+
+My mother always took a little red counter to the grocery store. The counter was used to keep a tally of the amount of money she would have spent so far on that visit to the store, if she bought all the items in her basket. There was a four-digit display, increment buttons for each digit, and a reset button. There was an overflow indicator that came up red if more money was entered than the $99.99 it would register. (This was a long time ago.)
+
+Write and implement the member functions of a class Counter that simulates and slightly generalizes the behavior of this grocery store counter. The constructor should create a Counter object that can count up to the constructor’s argument. That is, Counter (9999) should provide a counter that can count up to 9999. A newly constructed counter displays a reading of 0. The member function void reset(); sets the counter’s number to 0. The member functions void incr1(); increments the units digit by 1, void incr10(); increments the tens digit by 1, and void incr100(); and void incr1000( ); increment the next two digits, respectively. Accounting for any carry when you increment should require no further action than adding an appropriate number to the private data member. A member function bool overflow(); detects overflow. (Overflow is the result of incrementing the counter’s private data member beyond the maximum entered at counter construction.)
+
+Use this class to provide a simulation of my mother’s little red clicker. Even though the display is an integer, in the simulation, the rightmost (lower-order) two digits are always thought of as cents and tens of cents, the next digit is dollars, and the fourth digit is tens of dollars.
+
+Provide keys for cents, dimes, dollars, and tens of dollars. Unfortunately, no choice of keys seems particularly mnemonic. One choice is to use the keys asdfo: a for cents, followed by a digit 1 to 9; s for dimes, followed by digits 1 to 9; d for dollars, followed by a digit 1 to 9; and f for tens of dollars, again followed by a digit 1 to 9. Each entry (one of asdf followed by 1 to 9) is followed by pressing the Return key. Any overflow is reported after each operation. Overflow can be requested by pressing the o key.
+
+Above is the text of the problem 6 from our textbook page 647.
+
+Here are some clarifications and additions:
+
+All inputs should be checked for validity and if input is not valid all characters in the given line are discarded and corrected input is requested.
+
+Use the class Counter to simulate the little red grocery counter. The class Counter keeps the count and the overflow value each as 4 private integers (units, tens, hundreds and thousands).
+
+The class Counter includes following public constructors and functions:
+
+The default constructor sets the overflow value to 99.99, while the non-default
+    constructor uses provided four single digits as parameters to establish the overflow value.
+
+    Both constructors set the count to 0.   
+
+A public (mutator) member function void reset() resets the count to 0.
+A set of public (mutator) functions that increment digits 1 through 4 by 1:
+        void incr1()     //increments 1 cent digit
+
+        void incr10()    //increments 10 cent digit
+
+        void incr100()   //increments 100 cent ($1) digit
+
+        void incr1000()  //increments 1000 cent ($10)digit
+
+        Each function accounts for carry as necessary. 
+
+A public (accessor) member function bool overflow() detects overflow, i.e. the count
+    is over the overflow value that was set by a constructor
+
+A public (accessor) member function bool maxoverflow() detects the count over
+    the value 99.99
+
+Four public (accessor) member functions to display each digit of the count, the right
+    most two are cents and tens of cents, the next to are dollars and tens of dollars.
+
+A public (accessor) member function to display the overflow value.
+No other public member functions allowed. You may have any number of private
+    functions and private variables.
+
+In the main function of your program, first obtain info about the constructor: if it is the default constructor with value 9999, or to use a non-default constructor with its value to be given as 4 digit number.
+
+Then, provide keys for incrementing cents, dimes, dollars and tens of dollars and some additional tasks. Use the following:
+
+ 
+
+//Start of the code fragment
+
+cout << “\033[2J\033[1;1H”;    //This is a string of special characters that clears a display
+
+// display the count value in the format $xx.xx; at the beginning it would be $00.00
+
+     cout << "Enter a character and follow, if needed, by a digit 1-9:\n"
+
+             << "Enter a for units\n"
+
+             << "          s for tens\n"
+
+             << "          d for hundreds\n"
+
+             << "          f for thousands\n"
+
+             << "          o to inquire about overflow\n"
+
+             << "          r to reset counter\n"
+
+             << "          m to inquire about capacity overflow\n"        
+
+             << "          Q or q at any time to quit.\n"
+
+             << "Follow by pressing the return key in each case:";    
+
+       cin >> ch1;
+
+// read the second character if needed
+
+// End of the code fragment
+
+Adding to the counter is automatic.
+
+Overflow (the count over the set overflow value), if it has occurred, is reported (after clearing the display in the given fragment code above) after each operation with the following warning:
+
+ALERT: COUNT IS OVER THE MAXIMUM SET TO $xx.xx
+
+Capacity overflow (the count over 99.99), if it has once occurred, is reported (after clearing the display in the given fragment code above) after each operation with the following warning:
+
+ALERT: OVERFLOW OVER $99.99 HAS OCCURRED
+
+                RESULTS ARE NOT RELIABLE. RESET IF YOU WANT TO CONTINUE
+
+Count can be reset with the r key.
+
+Overflow test can be requested with the o key. Response could be as following:
+
+Overflow test requested
+
+OVERFLOW HAS OCURRED. COUNT > $xx.xx
+
+or
+
+OVERFLOW HASN’T OCCURRED. COUNT < = $xx.xx
+
+Capacity overflow test can be requested with m key. Response could be as following:
+
+Capacity overflow test requested
+
+CAPACITY OVERFLOW HAS OCURRED. COUNT > $99.99
+
+or
+
+CAPACITY OVERFLOW HASN’T OCCURRED. COUNT < = $99.99
+
+Use q or Q key to quit.
+
+After displaying any error or information message and before starting the given fragment code above, call this function:
+
+void pause()
+
+{ const int PAUSE_CONSTANT = 400000000; // you may like to adjust this constant
+
+  cout << endl << "Pausing for you to read . . .\n";
+
+  for (int X = 0; X < PAUSE_CONSTANT; X++)
+
+  {
+
+    X++; X--;
+
+  }
+
+}
+
+Provide the compilation command at the beginning of your program.
