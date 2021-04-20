@@ -1,0 +1,180 @@
+[babic.1@cse-fl1 Lab7]$ lab7
+
+
+Creating a link list using data from Data.7 file
+Input: 32 last= Unknown first= Student. His/her id= 7777777 already exists; Not added to the list!
+
+Link list creted. Number of nodes= 38
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: p
+You entered= p
+   1             Guthrie              Lauren          45
+   2                 Liu            Fangzhou         388
+   3              Madsen                Neil         453
+   4             Shelton              Xavier         899
+   5           Gillespie             Jessica        3322
+   6             Bhullar           Parvinder        3471
+   7              Reilly                Sean        3838
+   8            Kefauver            Nicholas        4532
+   9                Kohn               David        5410
+  10                 Chu                Ryan        5621
+  11                 Jin                Xing        7734
+  12           Berkovich             Michael       45387
+  13              Stopar           Alexander       45781
+  14         Ungerleider                Oren       48382
+  15               Trinh               Thanh       56789
+  16        Beiersdorfer                Eric      333333
+  17            Timcheck            Jonathan      345128
+  18              Meehan              Daniel      345232
+  19              Arrabi                Alex      495995
+  20              Schanz                Evan      634219
+  21                Posa                 Sam      641876
+  22              Ramage            Nicholas      654890
+  23               Kavka                Adam      919293
+  24           Schlottag                Jake     1639994
+  25              Lilley               Tylor     5420964
+  26           Treleaven             Jeffrey     6392919
+  27          Wisniewski               Brian     7777777
+  28           Angelucci              Joshua    33491919
+  29               Smith             Douglas    34012345
+  30              Nocton              Andrew    99999999
+  31            Sandoval               Lewis   123098432
+  32               Babic               Gojko   123456789
+  33              Zoller             Michael   123497654
+  34            Knighton                Ryan   222222345
+  35             Tenorio               Jesse   464663901
+  36                Khan                Amna   555555111
+  37               Maher               Casey   555999999
+  38               Yosua               Holly  2222222222
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: a
+You entered= a
+Enter First Last and id: gojko babic 1000 
+You entered: babic gojko 1000
+Is it correct (y/n)? y
+Node added to the list; Number of nodes= 39
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: p
+You entered= p
+   1             Guthrie              Lauren          45
+   2                 Liu            Fangzhou         388
+   3              Madsen                Neil         453
+   4             Shelton              Xavier         899
+   5               babic               gojko        1000
+   6           Gillespie             Jessica        3322
+   7             Bhullar           Parvinder        3471
+   8              Reilly                Sean        3838
+   9            Kefauver            Nicholas        4532
+  10                Kohn               David        5410
+  11                 Chu                Ryan        5621
+  12                 Jin                Xing        7734
+  13           Berkovich             Michael       45387
+  14              Stopar           Alexander       45781
+  15         Ungerleider                Oren       48382
+  16               Trinh               Thanh       56789
+  17        Beiersdorfer                Eric      333333
+  18            Timcheck            Jonathan      345128
+  19              Meehan              Daniel      345232
+  20              Arrabi                Alex      495995
+  21              Schanz                Evan      634219
+  22                Posa                 Sam      641876
+  23              Ramage            Nicholas      654890
+  24               Kavka                Adam      919293
+  25           Schlottag                Jake     1639994
+  26              Lilley               Tylor     5420964
+  27           Treleaven             Jeffrey     6392919
+  28          Wisniewski               Brian     7777777
+  29           Angelucci              Joshua    33491919
+  30               Smith             Douglas    34012345
+  31              Nocton              Andrew    99999999
+  32            Sandoval               Lewis   123098432
+  33               Babic               Gojko   123456789
+  34              Zoller             Michael   123497654
+  35            Knighton                Ryan   222222345
+  36             Tenorio               Jesse   464663901
+  37                Khan                Amna   555555111
+  38               Maher               Casey   555999999
+  39               Yosua               Holly  2222222222
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: r
+You entered= r
+Enter a number of Node to remove: 1
+You entered: 1
+Is it correct (y/n)? y
+Node removed from the list; Number of nodes= 38
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: p
+You entered= p
+   1                 Liu            Fangzhou         388
+   2              Madsen                Neil         453
+   3             Shelton              Xavier         899
+   4               babic               gojko        1000
+   5           Gillespie             Jessica        3322
+   6             Bhullar           Parvinder        3471
+   7              Reilly                Sean        3838
+   8            Kefauver            Nicholas        4532
+   9                Kohn               David        5410
+  10                 Chu                Ryan        5621
+  11                 Jin                Xing        7734
+  12           Berkovich             Michael       45387
+  13              Stopar           Alexander       45781
+  14         Ungerleider                Oren       48382
+  15               Trinh               Thanh       56789
+  16        Beiersdorfer                Eric      333333
+  17            Timcheck            Jonathan      345128
+  18              Meehan              Daniel      345232
+  19              Arrabi                Alex      495995
+  20              Schanz                Evan      634219
+  21                Posa                 Sam      641876
+  22              Ramage            Nicholas      654890
+  23               Kavka                Adam      919293
+  24           Schlottag                Jake     1639994
+  25              Lilley               Tylor     5420964
+  26           Treleaven             Jeffrey     6392919
+  27          Wisniewski               Brian     7777777
+  28           Angelucci              Joshua    33491919
+  29               Smith             Douglas    34012345
+  30              Nocton              Andrew    99999999
+  31            Sandoval               Lewis   123098432
+  32               Babic               Gojko   123456789
+  33              Zoller             Michael   123497654
+  34            Knighton                Ryan   222222345
+  35             Tenorio               Jesse   464663901
+  36                Khan                Amna   555555111
+  37               Maher               Casey   555999999
+  38               Yosua               Holly  2222222222
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: d
+You entered= d
+List has been destroyed; Number of nodes= 0
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: p
+You entered= p
+List is empty
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: a
+You entered= a
+Enter First Last and id: goj babic 10000
+You entered: babic goj 10000
+Is it correct (y/n)? y
+Node added to the list; Number of nodes= 1
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: p
+You entered= p
+   1               babic                 goj       10000
+
+Enter p to display the  list, a to add a node, r to remove a node,
+      d to destroy the list, e to exit: e
+You entered= e
+
+[babic.1@cse-fl1 Lab7]$ 
+
