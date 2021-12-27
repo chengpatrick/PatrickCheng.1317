@@ -1,0 +1,40 @@
+program
+    int X, Y;
+    int Z;
+    int NEG1;
+begin
+    read X, Y;
+    write X, Y;
+    Z = 0;
+    NEG1 = 0 - 1;
+    
+    while (Z < 10) loop
+        if (Z == 0) then
+            write X, Y, Z;
+        end;
+        if [(X > 0) && (Y > 0)] then
+            X = 0 - 6;
+        else
+            X = X * NEG1;
+            Y = Y * NEG1;
+        end;
+        Z = Z + 1;
+    end;
+    
+    if [(X == 6) || (X == (0 - 6))] then
+        write X;
+        write Y;
+    end;
+    
+    X = 3 * (3 - 1);
+    if [((X + Y) <= 0) || (X != 5)] then
+        Z = 0;
+        write X, Y, Z;
+        while [(Z < 5) && [!(X <= 0) || (Y >= 0)]] loop
+            Z = Z + 1;
+            X = X - 1;
+            Y = Y - 1;
+            write X, Y, Z;
+        end;
+    end;    
+end
